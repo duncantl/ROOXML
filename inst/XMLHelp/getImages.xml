@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-19 16:21:56">
+  <r:package>ROOXML</r:package>
+
+  <rh:topic>getImages</rh:topic>
+  <rh:method name="getImages">XMLInternalDocument</rh:method>
+  <rh:title>Identify the components in an Office Open archive that are images within the document</rh:title>
+  <rh:description>
+
+    <para>This function examines the Office Open archive and 
+     queries the names of the image files that it contains and are referenced
+     within the "document".
+     This is  a generic function and different packages provide methods
+     for different types of Office Open archives. That is <r:pkg>RExcelXML</r:pkg>
+      and <r:pkg>RWordXML</r:pkg> provide methods.
+      </para>
+    <para>These methods do more than just look in the zip file for files with standard image 
+    extensions. Instead, they look at the document and its relationships file and finds all
+    the files in the archive corresponding to the image type.
+
+     </para>
+  </rh:description>
+  <rh:arguments>
+   <rh:arg id="doc" func="getImages"><para>the Office Open document archive.
+This is an instance of a class derived from <r:class>OOXMLArchive</r:class>,
+e.g. <r:class>WordArchive</r:class> or <r:class>ExcelArchive</r:class></para></rh:arg>
+    <rh:arg id="..."><para>additional parameters for methods</para></rh:arg>
+
+   </rh:arguments>
+  <rh:value>
+    <para>a character vector giving the names of the files/components within the archive corresponding
+to the images in the document. The names of the vector give the relational identifiers
+    used in the content of the document to refer to the image files. See the relationships
+part of the document.
+     </para>
+  </rh:value>
+
+  <rh:conditions>
+   </rh:conditions>
+  <rh:details>
+    <para>The specifics of extracting the references to the  images depend on the type of document.
+For that reason, these should be methods for a WordArchive and ExcelArchive in the
+appropriate packages. Currently this works for a Word document, and not an Excel document.
+     </para>
+  </rh:details>
+
+  <rh:seealso>
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+  <rh:references>
+   </rh:references>
+
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title>A Word Document</rh:title>
+      <rh:description>
+
+        <para>This illustrates how to access the images in a Word document.</para>
+	<para> This belongs in RWordXML!</para>
+
+      </rh:description>
+      <r:code>
+if(require(RWordXML)) {
+   if(file.exists(system.file("SampleDocs", "Images2.docx", package = "RWordXML"))) {
+     doc = wordDoc(system.file("SampleDocs", "Images2.docx", package = "RWordXML"))
+     getImages(doc)
+   }
+
+  doc = wordDoc(system.file("SampleDocs", "pics.docx", package = "ROOXML"))
+  getImages(doc)
+}
+        </r:code>
+    </rh:example>
+
+  <rh:example>
+   <rh:description><para>
+This version illustrates extracting the names of the image components from
+an Excel document.
+  </para> </rh:description>
+<r:code>
+if(require(RExcelXML)) {
+   e = excelDoc(system.file("SampleDocs", "Images.xlsx", package = "ROOXML"))
+   getImages(e)
+}
+</r:code>
+  </rh:example>
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>documentation</rh:keyword>
+    <rh:keyword>IO</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>

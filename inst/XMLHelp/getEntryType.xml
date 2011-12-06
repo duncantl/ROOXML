@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-11-09 07:28:22">
+<r:package>ROOXML</r:package>
+<rh:topic> </rh:topic>
+<rh:topic>getEntryType</rh:topic>
+<rh:topic>getEntryTypeByExtension</rh:topic>
+<rh:title>Get the type of an element in an Office Open archive</rh:title>
+<rh:description>
+<para> 
+These functions allows one to determine the nature or purpose of an element in an Office Open archive.
+It looks up the mapping from file name and extension to type and 
+     </para>
+</rh:description>
+<rh:arguments>
+   <rh:arg id="filename" func="getEntryType"><para>the name of the entry in the archive, i.e. the file name of that entry.
+    This can have the preceding / or not. If <r:arg>partialMatch</r:arg> is <r:true/> this can be any part of the file name that 
+    uniquely identifies it, e.g. the base part of the name without the directory assuming that is unique within the archive.</para></rh:arg>
+   <rh:arg id="archive" func="getEntryType"><para>the <r:class>OOXMLArchive</r:class> object representing the archive.</para></rh:arg>
+   <rh:arg id="types" func="getEntryType"><para>the collection of mappings from file names and extensions to type names, e.g.
+     "application/vnd.openxmlformats-officedocument.theme+xml" for a theme document.</para>
+  <para>For <r:func>getEntryTypeByExtension</r:func>, this is the content types retrieved via
+  <r:func>contentTypes</r:func>.</para></rh:arg>
+   <rh:arg id="partialMatch" func="getEntryType"><para>a logical value indicating whether to treat the name of the archive
+element (<r:arg>filename</r:arg>) as a partial name of an archive element.</para></rh:arg>
+   </rh:arguments>
+<rh:value>
+<para>
+A character string giving the type for the input file or extension.
+     </para>
+</rh:value>
+<rh:conditions>
+   </rh:conditions>
+<rh:details>
+<para>
+     </para>
+</rh:details>
+<rh:seealso>
+   </rh:seealso>
+<xi:include href="/Users/duncan/authorInfo.xml"/>
+<rh:references>
+   </rh:references>
+<rh:examples>
+<r:init/>
+<rh:example id="">
+<rh:title> </rh:title>
+<rh:description>
+<para>
+This shows how we can match by file name using
+exact matching or partial matching.
+If we don't use partial matching and do not have an exact match,
+we match by extension.
+        </para>
+</rh:description>
+<r:code>
+  oo = createOODoc(system.file("SampleDocs", "pics.docx", package = "ROOXML"))
+  getEntryType("theme1.xml", oo)
+  getEntryType("theme1.xml", oo, partial = TRUE)
+        </r:code>
+</rh:example>
+</rh:examples>
+<rh:keywords>
+<rh:keyword>IO</rh:keyword>
+</rh:keywords>
+<rh:versionIntroduced version=""/>
+</rh:help>

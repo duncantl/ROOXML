@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-19 17:01:50">
+  <r:package>ROOXML</r:package>
+  <rh:topic>getDocument</rh:topic>
+  <rh:topic>resolveRelationships</rh:topic>
+  <rh:topic>getPart</rh:topic>
+  <rh:topic>getRelationships</rh:topic>
+  <rh:title>Process relationships between the different elements of an Office Open document</rh:title>
+  <rh:description>
+    <para>Office Open documents are made up of separate files that are combined together
+  in various ways. They logic for how the different contents are combined is mostly controlled
+  by the "relationships" which are a series of maps of part to document.
+  These functions provide facilities for working with these relationships in R in order to
+  make sense of an Office Open document.  </para>
+
+  <para><r:func>getDocument</r:func> gets the name of the component/file in the archive
+ that corresponds to the top-level document, e.g. the word processing document or the workbook.
+  </para>
+
+  <para><r:func>getRelationships</r:func> returns a data frame of relationship id, target and type triples.
+</para>
+  <para><r:func>resolveRelationships</r:func> identifies the components in the document archive
+ corresponding to a particular identifier.
+  </para>
+
+  <para>
+<r:func>getPart</r:func> looks up the name of the entry in the archive corresponding to a
+  conceptual part, e.g. document.
+  One can index with the full name of the part or the name of the  usual file at which that part is located.
+  The parts come from the PartName entries in the "[Content_Types].xml" component of the archive,
+  i.e. via a call to <r:func>contentTypes</r:func>.
+  <r:func>getPart</r:func> does partial matching anywhere in the string.
+  </para>
+  <para>
+<r:func>getPart</r:func> matches by partial name on the PartName attribute first, then by regular expression
+ on the attribute PartName.
+  If the part is As-Is, then we look for that literal string rather than treating the string
+  as a possible regular expression.
+  </para>
+
+
+  </rh:description>
+  <rh:arguments>
+   <xi:include href="properties.xml" xpointer="xmlns(rh=http://www.r-project.org/help) xpointer(//rh:arg[@id='doc'])" />
+
+   <rh:arg id="rels" func="getRelationships"><para> the XML document specifying the relationships between components within the
+  OO document.</para></rh:arg>
+   <rh:arg id="parts" func="getPart"><para>the collection of available parts from the document.
+  If one is making repeated queries of the document, it can be convenient to compute the table of parts just once
+via the (non-exported) <r:func r:exported="false">computeParts</r:func> function.</para></rh:arg>
+   <rh:arg id="..." func="getDocument"><para>additional parameters for methods</para></rh:arg>
+   
+     <rh:arg id="part"><para>a string identifying the part by file name or content type.
+   Use <r:func pkg="base">I</r:func> to have the function treat it the part name as a fixed literal string rather than
+regular expression.</para></rh:arg>
+     <rh:arg id="default"><para>the value to return if the specified part is not found/matched</para></rh:arg>
+     <rh:arg id="stripSlash"><para>logical value indicating whether to remove the initial / in the part name, e.g. "/word/document.xml"
+  would become "word/document.xml" </para></rh:arg>
+     <rh:arg id="ids"><para>the identifiers that we want to resolve with respect to the relationships table in the document</para></rh:arg>
+     <rh:arg id="relTable"><para>the relationship table from the OO document</para></rh:arg>
+     <rh:arg id="relativeTo"><para>the directory to paste in front of the result</para></rh:arg>
+  </rh:arguments> 
+  <rh:value>
+    <para><r:func>getDocument</r:func> returns a character string (vector of length 1) giving the name of the component in the
+archive of the main document.
+     </para>
+  <para><r:func>resolveRelationships</r:func> returns a character vector.
+  </para>
+  <para><r:func>getPart</r:func> returns a character vector
+  </para>
+  <para>
+   <r:func>getRelationships</r:func> returns a data frame with as many rows as there are relationships
+   within the top-level of the document and with 3 columns/variables.
+  These are the relationship identifier (id), the target component in the archive (target) and the
+  type of the relationship (type).
+  
+  </para>
+  </rh:value>
+  <rh:conditions>
+   </rh:conditions>
+  <rh:details>
+    <para>
+     </para>
+  </rh:details>
+  <rh:seealso>
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+  <rh:references>
+   </rh:references>
+  <author>
+    <firstname> </firstname>
+    <surname> </surname>
+    <email> </email>
+  </author>
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title> </rh:title>
+      <rh:description>
+        <para>
+        </para>
+      </rh:description>
+      <r:code>
+  d = createOODoc(system.file("SampleDocs", "WordEg.docx", package = "ROOXML"))
+  getRelationships(d)
+  resolveRelationships("rId1", d)
+        </r:code>
+    </rh:example>
+
+  <rh:example>
+  <rh:title>  </rh:title>
+  <rh:description>  </rh:description>
+  <r:code>
+  d = createOODoc(system.file("SampleDocs", "WordEg.docx", package = "ROOXML"))
+  getPart(d, "numbering.xml")  # by file name
+  getPart(d, I("comments+xml"))  # by content type
+  </r:code>
+  </rh:example>
+
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>documentation</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>

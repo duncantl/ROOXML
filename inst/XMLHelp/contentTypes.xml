@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-20 06:59:11">
+  <r:package>ROOXML</r:package>
+  <rh:topic>addDefaultContentType</rh:topic>
+  <rh:topic>addExtensionTypes</rh:topic>
+  <rh:topic>contentTypes</rh:topic>
+  <rh:title>Query and update the content types of an Office Open archive</rh:title>
+  <rh:description>
+    <para>These functions allow us to query the content type of individual components/files
+within an Office Open archive/document and to also add new content type information
+such as extensions and the default type.
+     </para>
+  </rh:description>
+  <rh:arguments>
+   <rh:arg id="ar,archive" func="contentTypes"><para>the archive object identifying the OO document.</para></rh:arg>
+   <rh:arg id="asXML" func="contentTypes"><para> whether to parse the content types document as an XML document and returned
+     the parsed tree.</para></rh:arg>
+   
+<!--     <rh:arg id="archive"><para> </para></rh:arg> -->
+     <rh:arg id="exts"><para>named character vector giving the extensions as names and the content type as the corresponding value.
+ </para></rh:arg>
+     <rh:arg id="update"><para>a logical value indicating whether to update the OO archive or just
+  the XML tree.</para></rh:arg>
+     <rh:arg id="ext"><para>a string identifying the extension for which we are adding default content type</para></rh:arg>
+     <rh:arg id="type"><para>a string identifying the content type for the specified extension</para></rh:arg>
+     <rh:arg id="node"><para>the XML node to which to add the content type</para></rh:arg></rh:arguments>
+  <rh:value>
+    <para><r:func>contentTypes</r:func> returns an XML document with root node
+ <xml:tag>Types</xml:tag>. The children are 
+<xml:tag>Override</xml:tag> and <xml:tag>Default</xml:tag> that specify the
+content type for each "file" within the archive.
+</para>
+    <para>
+     </para>
+  </rh:value>
+  <rh:conditions>
+   </rh:conditions>
+  <rh:details>
+    <para>
+     </para>
+  </rh:details>
+  <rh:seealso>
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+  <rh:references>
+   </rh:references>
+
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title> </rh:title>
+      <rh:description>
+        <para>
+        </para>
+      </rh:description>
+      <r:code>
+        </r:code>
+    </rh:example>
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>documentation</rh:keyword>
+    <rh:keyword>IO</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>

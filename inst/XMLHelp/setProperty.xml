@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-19 17:36:00">
+  <r:package>ROOXML</r:package>
+  <rh:topic>setUpdated</rh:topic>
+  <rh:topic>creator&lt;-</rh:topic>
+  <rh:topic>setProperty</rh:topic>
+  <rh:title>Set one or more global properties of an Office Open document</rh:title>
+  <rh:description>
+    <para>These functions allow us to modify and update the properties of a document
+     to set things like the author/creator, date modified, etc.
+    <r:func>setProperty</r:func> allows us to set general properties by name.
+     <r:func>creator&lt;-</r:func> and <r:func>setUpdated</r:func> are convenience functions which set 
+     specific properties.
+</para>
+    <para>These functions update the external archive if <r:arg>doc</r:arg>  is
+   descends from <r:class>OOXMLArchive</r:class>.</para>
+  </rh:description>
+  <rh:arguments>
+   <rh:arg id="doc" func="setProperty"><para>the object identifying the document of interest.
+   This can be an <r:class>OOXMLArchive</r:class> or derived object or a parsed XML document.</para></rh:arg>
+   <rh:arg id="node.expression" func="setProperty"><para>xpath expression to identify the property of interest</para></rh:arg>
+   <rh:arg id="value" func="setProperty"><para>the new value for the property.</para></rh:arg>
+   <rh:arg id="update" func="setProperty"><para>a logical value indicating whether to update the archive
+      or just the XML content of the document in memory</para></rh:arg>
+   
+<!--   <rh:arg id="name"><para>the name of the person who created the document</para></rh:arg> -->>
+   <rh:arg id="date"><para>a date as a string or POSIXt value</para></rh:arg></rh:arguments>
+  
+  <rh:value>
+    <para>These are used for their side effect. They generally return the new value.
+     </para>
+  </rh:value>
+  <rh:conditions>
+   </rh:conditions>
+  <rh:seealso>
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+  <rh:references>
+   </rh:references>
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title> </rh:title>
+      <rh:description>
+        <para>
+        </para>
+      </rh:description>
+      <r:code>
+        </r:code>
+    </rh:example>
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>IO</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>

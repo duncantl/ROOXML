@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-10-29 07:08:26">
+<r:package>ROOXML</r:package>
+
+<rh:topic>createOODoc</rh:topic>
+<rh:title>Create object representing an Office Open document</rh:title>
+<rh:description>
+<para>This is a general function that can be used by other packages
+and users to create an object that represents an Office Open
+document such as a Word or Excel document.
+The function allows the caller to specify the class name of the target object
+and the general OO archive values are filled in.
+     </para>
+</rh:description>
+<rh:arguments>
+   <rh:arg id="f" func="createOODoc"><para>the name of the Office Open file</para></rh:arg>
+   <rh:arg id="create" func="createOODoc"><para>a logical value indicating whether we should create the file if it does not exist (by copying a template)</para></rh:arg>
+   <rh:arg id="class" func="createOODoc"><para>the name of the class of which we want an instance.  This allows the caller to use this function
+to create instances of, e.g., the WordArchive or ExcelArchive classes. This should be the name of a class that extends
+<r:class>OOXMLArchive</r:class>.</para></rh:arg>
+   <rh:arg id="emptyDoc" func="createOODoc"><para>the name of a template document of this type if the file given via <r:arg>f</r:arg> does not exist and
+<r:arg>create</r:arg> is <r:true/>.</para></rh:arg>
+   <rh:arg id="extension" func="createOODoc"><para>a string giving the extension to check for if only the base name of the document is given</para></rh:arg>
+   </rh:arguments>
+<rh:value>
+<para>An object of class given by  <r:arg>class</r:arg>.
+This has the name of the file and the vector of names 
+of the components within the archive.
+     </para>
+</rh:value>
+<rh:conditions>
+   </rh:conditions>
+<rh:details>
+<para>
+     </para>
+</rh:details>
+<rh:seealso>
+ <r:func pkg="RWordXML">wordDoc</r:func> and <r:func pkg="RExcelXML">excelDoc</r:func>
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+<rh:references>
+   </rh:references>
+<rh:examples>
+<r:init/>
+<rh:example id="">
+<rh:title> </rh:title>
+<rh:description>
+<para>
+        </para>
+</rh:description>
+<r:code>
+        </r:code>
+</rh:example>
+</rh:examples>
+<rh:keywords>
+<rh:keyword/>
+</rh:keywords>
+<rh:versionIntroduced version=""/>
+</rh:help>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" 
+         xmlns:omg="http://www.omegahat.org"
+         xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" 
+         xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-11-09 08:39:58">
+<r:package>ROOXML</r:package>
+<rh:topic> </rh:topic>
+<rh:topic>addToDoc</rh:topic>
+<rh:title>Add content to a document</rh:title>
+<rh:description>
+<para> 
+This is a generic function for which packages such as
+<omg:pkg>RWordXML</omg:pkg> and <omg:pkg>RExcelXML</omg:pkg>
+provide methods. These add content to an Office Open 
+document. This might text such as a paragraph which is added
+to the core XML document, or alternatively the addition might
+be an image which is a separate file that is added to the
+archive and referenced in the core document.
+The intent is to abstract some of the details of inserting
+new content.
+     </para>
+</rh:description>
+<rh:arguments>
+   <rh:arg id="archive" func="addToDoc"><para>the archive/office open document to which the content is being added. </para></rh:arg>
+   <rh:arg id="node" func="addToDoc"><para>the XML node in the main document at which the content is to be added. This identifies
+  the archive element/file as well as the location.</para></rh:arg>
+   <rh:arg id="update" func="addToDoc"><para>a logical value indicating whether to update the archive
+ on disk as well as the internal documents.</para></rh:arg>
+   <rh:arg id="..." func="addToDoc"><para> additional parameters to be interpreted by the methods.
+These include auxiliary files.</para></rh:arg>
+   </rh:arguments>
+<rh:value>
+<para>
+     </para>
+</rh:value>
+<rh:conditions>
+   </rh:conditions>
+<rh:details>
+<para>
+     </para>
+</rh:details>
+<rh:seealso>
+   </rh:seealso>
+<xi:include href="/Users/duncan/authorInfo.xml"/>
+<rh:references>
+   </rh:references>
+<author>
+<firstname> </firstname>
+<surname> </surname>
+<email> </email>
+</author>
+<rh:examples>
+<r:init/>
+<rh:example id="">
+<rh:title> </rh:title>
+<rh:description>
+<para>
+        </para>
+</rh:description>
+<r:code>
+        </r:code>
+</rh:example>
+</rh:examples>
+<rh:keywords>
+<rh:keyword/>
+</rh:keywords>
+<rh:versionIntroduced version=""/>
+</rh:help>

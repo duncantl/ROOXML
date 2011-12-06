@@ -1,0 +1,12 @@
+
+Document
+  addToDoc
+  createOODoc
+  getEntryType
+  
+Undocumented S4 classes:
+  OOXMLArchive
+Undocumented S4 methods:
+  generic '[[' and siglist 'OOXMLArchive,ANY,missing'
+  generic '[[' and siglist 'OOXMLArchive,character,missing'
+  generic 'getPart' and siglist 'OOXMLArchive'

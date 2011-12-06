@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-19 08:40:35">
+  <r:package>ROOXML</r:package>
+
+  <rh:topic>addImage</rh:topic>
+  <rh:title>Add an image to an Office Open document</rh:title>
+  <rh:description>
+
+    <para> This function handles adding an image file to the
+  Zip archive that is an Office Open document file. 
+  It handles adding the specified file to the zip file
+  and also updates the relationships.
+  It also inserts the image into the target document
+  at the given node, either as a child or sibling of that node.
+     </para>
+  </rh:description>
+  <rh:arguments>
+   <rh:arg id="archive" func="addImage"><para>the Office Open archive  which should be
+  an instance of a class derived from <r:class>OOXMLArchive</r:class>, e.g. a 
+ <r:class>WordArchive</r:class> or <r:class>ExcelArchive</r:class>.</para></rh:arg>
+   <rh:arg id="filename" func="addImage"><para>the name of the image file to be added.
+      At present, we don't deal with images in memory, but we could in the future.</para></rh:arg>
+   <rh:arg id="node" func="addImage"><para>the XML node at which a reference to the image is to be added</para></rh:arg>
+   <rh:arg id="..." func="addImage"><para></para></rh:arg>
+   <rh:arg id="after" func="addImage"><para></para></rh:arg>
+   <rh:arg id="sibling" func="addImage"><para></para></rh:arg>
+   </rh:arguments>
+  <rh:value>
+    <para>
+     </para>
+  </rh:value>
+  <rh:conditions>
+   </rh:conditions>
+  <rh:details>
+    <para>
+     </para>
+  </rh:details>
+  <rh:seealso>
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+  <rh:references>
+   </rh:references>
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title> </rh:title>
+      <rh:description>
+        <para>
+        </para>
+      </rh:description>
+      <r:code>
+        </r:code>
+    </rh:example>
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>documentation</rh:keyword>
+    <rh:keyword>IO</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>

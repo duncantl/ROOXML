@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-19 16:22:19" updated="2009-05-19 16:58:48">
+  <r:package>ROOXML</r:package>
+  <rh:topic>commentTable</rh:topic>
+  <rh:topic>commentTable2</rh:topic>
+  <rh:topic>commentNodes</rh:topic>
+  <rh:topic>comments</rh:topic>
+  <rh:title>Access the comments in the document</rh:title>
+  <rh:description>
+    <para>These functions allow the caller to retrieve information about the comments in an Office Open document.
+We can get just the content of the comments, or the contents along with meta-information
+such as the date and author, or the XML nodes representing the comments.
+The last of these is useful if we want to programmatically modify the comments.
+</para>
+    <para><r:func>commentTable2</r:func> returns the content of the comments and also the styles associated with those comments.
+  This information can be used to interpret the comments, e.g. as R code or R plot or R options.
+  This functionality may be merged back into <r:func>commentTable</r:func> with a parameter controlling whether the styles are returned.
+     </para>
+  </rh:description>
+  <rh:arguments>
+   <rh:arg id="doc" func="commentTable,commentNodes,comments"><para>the Office Open document</para></rh:arg>
+   <rh:arg id="op" func="comments"><para> a function that is used to process each of the comment nodes, e.g. xmlValue</para></rh:arg>
+   </rh:arguments>
+  <rh:value>
+    <para>
+<r:func>comments</r:func> returns a character vector giving the contents of the comments.
+    </para>
+    <para>
+    <r:func>commentTable</r:func> returns a data frame with as many rows as there are comments.
+The data frame has 4 variables: 
+ <r:list>
+  <item id="id">the identifier for the author</item>
+  <item id="author">the name of the author</item>
+  <item id="date">the date the comment was changed and of class <r:s3class>POSIXct</r:s3class>.</item>
+  <item id="value">the text content of the comment</item>
+ </r:list>
+    </para>
+    <para>
+    <r:func>commentNodes</r:func> returns a list of <r:s3class>XMLInternalElementNode</r:s3class> objects.
+     </para>
+
+  </rh:value>
+  <rh:note>
+We need to do a little work to make this general for all Office Open files and not just Word
+files. Specifically, we need to find the relevant Override@ContentType for the type of document.
+  </rh:note>
+  <rh:seealso><r:func pkg="RWordXML">wordDoc</r:func>
+   </rh:seealso>
+
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+
+  <rh:references>
+   </rh:references>
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title> </rh:title>
+      <rh:description>
+        <para>
+        </para>
+      </rh:description>
+      <r:code>
+     file = system.file("SampleDocs", "WordEg.docx", package = "ROOXML")
+if(require(RWordXML)) {
+     doc = wordDoc(file)
+     comments(doc)
+
+     commentTable(doc)
+
+     commentNodes(doc)
+}
+        </r:code>
+    </rh:example>
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>documentation</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>

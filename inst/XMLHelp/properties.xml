@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<rh:help xmlns:rh="http://www.r-project.org/help" xmlns:r="http://www.r-project.org" xmlns:s3="http://www.r-project.org/S3" xmlns:s4="http://www.r-project.org/S4" xmlns:xi="http://www.w3.org/2003/XInclude" created="2009-05-19 16:35:53" updated="2009-05-19 16:57:03">
+  <r:package>ROOXML</r:package>
+  <rh:topic>properties</rh:topic>
+  <rh:topic>keywords</rh:topic>
+  <rh:topic>Title</rh:topic>
+  <rh:topic>property</rh:topic>
+  <rh:topic>modified</rh:topic>
+  <rh:topic>description</rh:topic>
+  <rh:topic>category</rh:topic>
+  <rh:topic>created</rh:topic>
+  <rh:topic>creator</rh:topic>
+  <rh:topic>revision</rh:topic>
+  <rh:topic>subject</rh:topic>
+  <rh:title>Query properties of an Office Open Document.</rh:title>
+  <rh:description>
+    <para> These functions allows us to query properties of the 
+   global Office Open document such as an Excel or Word document.  
+  These properties are items such as the name of the author, the date the document was created
+ and when it was modified, generic comments, keywords, the category of the document.
+ We can also retrieve custom properties, i.e. those that are explicitly added by the 
+   author(s) that are not part of the general collection of properties.
+  These are more unusual properties and also free-form properties that 
+  authors can create themselves.
+     </para>
+  </rh:description>
+  <rh:arguments>
+    <rh:arg id="doc" func="properties">
+      <para>the Office Open document whose properties are being queried. This is a generic <r:class>OOXMLArchive</r:class> object
+    but typically created via a constructor function from another package which provide interfaces
+   for specific types of Office Open documents..</para>
+    </rh:arg>
+    <rh:arg id="..." func="properties">
+      <para>character strings specifying which properties are being requested.
+   If none are specified, all the available properties are returned.</para>
+    </rh:arg>
+    <rh:arg id="tt" func="properties">
+      <para>the document containing the properties being queried. If one is querying numerous properties
+    individually, it may be convenient to fetch this document once and pass it in several calls. Typically this argument will be omitted.</para>
+    </rh:arg>
+    <rh:arg id=".els" func="properties">
+      <para>an alternative way to specify the sub-collection of desired properties.
+   This is convenient when one has the names as a character vector and not as individual names in the call.</para>
+    </rh:arg>
+
+    <rh:arg id="custom" func="properties"><para>a logical value indicating whether we want
+to work with the custom properties that the authors of the document may have added
+explicitly to the document, including free-form properties.
+<r:true/> indicates that we should use the custom properties; <r:false/> indicates
+using the regular document properties.
+</para></rh:arg>
+
+    <rh:arg id="sep" func="keywords"><para>
+a regular expression or literal string that is used to 
+split the entries in the keyword string. This is passed
+to <r:func pkg="base">strsplit</r:func>.
+</para></rh:arg>
+
+    <rh:arg id="el" func="keywords"><para>
+a character string giving the name of the property to be retrieved.
+</para></rh:arg>
+
+  </rh:arguments>
+  <rh:value>
+    <para>A list with the property values.
+     </para>
+  </rh:value>
+  <rh:conditions>
+   </rh:conditions>
+  <rh:details>
+    <para>
+These query the (regular) properties  in the Office Open archive.
+     </para>
+  </rh:details>
+  <rh:seealso>
+  <r:func pkg="RWordXML">wordDoc</r:func> and <r:func pkg="RExcelXML">excelDoc</r:func> in 
+   the RWordXML and RExcelXML packages respectively.
+   </rh:seealso>
+  <xi:include href="/Users/duncan/authorInfo.xml" xpointer="xpointer(//author)" />
+  <rh:references>
+   Office Open
+   </rh:references>
+  <rh:examples>
+    <r:init/>
+    <rh:example id="">
+      <rh:title> </rh:title>
+      <rh:description>
+        <para>The following shows how we can query an Excel document.
+        </para>
+      </rh:description>
+      <r:code>
+         file = system.file("SampleDocs", "Workbook2.xlsx", package = "ROOXML")
+         doc = createOODoc(file, class = "OOXMLArchive")
+
+         properties(doc)
+         names(properties(doc))
+
+         creator(doc)
+         created(doc)
+         modified(doc)
+         properties(doc, "lastModifiedBy")
+        </r:code>
+    </rh:example>
+  </rh:examples>
+  <rh:keywords>
+    <rh:keyword>IO</rh:keyword>
+  </rh:keywords>
+  <rh:versionIntroduced version=""/>
+</rh:help>
