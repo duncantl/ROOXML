@@ -1,5 +1,5 @@
 Package: ROOXML
-Version: 0.2-0
+Version: 0.3-0
 Title:  Simple tools for Open Office XML documents
 Description:  This is a collection of some general and quite simple facilities accessing common 
   elements  from within R of an Open XML document, Microsoft's current format.
